@@ -1,0 +1,118 @@
+############################################
+# 🚫 SISTEMA OPERACIONAL
+############################################
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.swo
+
+############################################
+# ☕ JAVA / SPRING BOOT
+############################################
+# Compilação
+build/
+out/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+logs/
+*.log
+
+# Configs com credenciais reais (CRÍTICO)
+src/main/resources/application-dev.properties
+src/main/resources/application-prod.properties
+
+############################################
+# ⚛️ NODE / REACT
+############################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build
+dist/
+
+# Cache
+.cache/
+.parcel-cache/
+
+############################################
+# 🔐 VARIÁVEIS DE AMBIENTE (CRÍTICO)
+############################################
+.env
+.env.local
+.env.development
+.env.production
+.env.development.local
+.env.production.local
+.env.test.local
+
+# Esses SIM vão para o git (são exemplos sem credenciais)
+!.env.example
+!.env.development.example
+!.env.production.example
+
+############################################
+# 🐳 DOCKER
+############################################
+docker-compose.override.yml
+*.env.docker
+.env                          # secrets do docker-compose (já coberto acima, mas explícito aqui)
+
+############################################
+# 💻 IDEs E EDITORES
+############################################
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+.history/
+
+############################################
+# 📦 TESTES E COBERTURA
+############################################
+coverage/
+*.lcov
+
+############################################
+# 📊 RELATÓRIOS / FERRAMENTAS
+############################################
+*.hprof
+*.jfr
+
+############################################
+# 📁 ARQUIVOS TEMPORÁRIOS
+############################################
+tmp/
+temp/
+
+############################################
+# 🔑 SEGURANÇA / CHAVES
+############################################
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+
+############################################
+# 📤 UPLOADS / STORAGE LOCAL
+############################################
+uploads/
+storage/
+
+############################################
+# 🧪 MISC
+############################################
+*.pid
+*.seed
+*.tgz
+*.gz
