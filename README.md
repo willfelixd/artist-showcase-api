@@ -16,6 +16,10 @@ visualize informações da artista, consulte a agenda de shows, o repertório
 musical e entre em contato — enquanto o admin gerencia tudo via painel
 protegido com autenticação JWT.
 
+<p>
+  <img src=".github/assets/kanban-artist-showcase.gif" alt="Project Kanban" width="700"/>
+</p>
+
 > ⚠️ Projeto em desenvolvimento ativo. Novas funcionalidades serão adicionadas
 > a cada fase.
 
@@ -26,7 +30,7 @@ protegido com autenticação JWT.
 | Tecnologia | Uso no projeto |
 |---|---|
 | Java 17 | Linguagem principal |
-| Spring Boot 3.x | Configuração e execução da aplicação |
+| Spring Boot 3.5.15 | Configuração e execução da aplicação |
 | Spring Web MVC | Endpoints REST |
 | Spring Data JPA / Hibernate | Persistência e consultas |
 | Spring Security + JWT | Autenticação e autorização |
@@ -146,7 +150,7 @@ No Windows:
 gradlew.bat bootRun
 ```
 
-A aplicação sobe em `http://localhost:8080`.
+A aplicação sobe em `http://localhost:8080`
 
 O admin padrão é criado automaticamente no primeiro boot:
 - **Usuário:** `admin`
@@ -239,32 +243,34 @@ Os testes usam H2 em memória — não precisam do Docker rodando.
 
 ## 📁 Estrutura de pastas
 
+```
 src
 ├── 📂 main
 │   ├── ☕ java
 │   │   └── 📦 com.artistshowcase.api
-│   │       ├── 🔧 config        # Cache, CORS, Security, Swagger
-│   │       ├── 🌐 controller    # Endpoints REST
-│   │       ├── 📋 dto           # Objetos de entrada e saída
-│   │       ├── ⚠️ exception     # Exceções e handler global
-│   │       ├── 🧩 model         # Entidades JPA
-│   │       │   └── 🏷️ enums    # BookingStatus
-│   │       ├── 🗄️ repository   # Interfaces Spring Data JPA
-│   │       ├── 🔐 security      # Filtro JWT e JwtService
-│   │       ├── ⚙️ service       # Regras de negócio
-│   │       └── 🛠️ util         # YouTubeUtils
+│   │       ├── 🔧 config          # Cache, CORS, Security, Swagger
+│   │       ├── 🌐 controller      # Endpoints REST
+│   │       ├── 📋 dto             # Objetos de entrada e saída
+│   │       ├── ⚠️ exception       # Exceções e handler global
+│   │       ├── 🧩 model           # Entidades JPA
+│   │       │   └── 🏷️ enums      # BookingStatus
+│   │       ├── 🗄️ repository      # Interfaces Spring Data JPA
+│   │       ├── 🔐 security        # Filtro JWT e JwtService
+│   │       ├── ⚙️ service         # Regras de negócio
+│   │       └── 🛠️ util            # YouTubeUtils
 │   └── 📋 resources
 │       ├── application.properties
 │       ├── application-dev.properties.example
 │       ├── application-prod.properties
 │       └── logback-spring.xml
 └── 🧪 test
-├── ☕ java
-│   └── 📦 com.artistshowcase.api
-│       ├── 🌐 controller
-│       └── ⚙️ service
-└── 📋 resources
-└── application-test.properties
+    ├── ☕ java
+    │   └── 📦 com.artistshowcase.api
+    │       ├── 🌐 controller
+    │       └── ⚙️ service
+    └── 📋 resources
+        └── application-test.properties
+```
 
 ---
 
@@ -273,7 +279,7 @@ src
 *(Em breve — prints do Swagger e do painel admin)*
 
 <p>
-  <img src="docs/screenshot-swagger.png" alt="Swagger UI" width="700"/>
+  <img src=".github/assets/primeiro-teste.png" alt="Primeiro teste do backend — GET /api/health" width="700"/>
 </p>
 
 ---
@@ -310,8 +316,8 @@ src
   <tr>
     <td align="center">
       <a href="https://github.com/willfelixd">
-        <img src="https://avatars.githubusercontent.com/willfelixd" width="100px;" style="border-radius:50%"/><br />
-        <sub><b>William Felix</b></sub>
+        <img src="https://avatars.githubusercontent.com/willfelixd?v=4" width="100px;" /><br />
+        <a href="https://www.linkedin.com/in/william-felix-souza">William Felix</a>
       </a>
     </td>
   </tr>
