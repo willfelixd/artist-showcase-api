@@ -72,7 +72,7 @@ e saída da API.
 ## 📈 Evolução do projeto
 
 - [x] #1 Setup inicial do projeto
-- [ ] #2 Módulo de perfil da artista
+- [x] #2 Módulo de perfil da artista
 - [ ] #3 Migração para PostgreSQL com Docker
 - [ ] #4 Módulo de repertório musical
 - [ ] #5 Módulo de vídeos com integração YouTube
