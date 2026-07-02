@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: isa-cantora-postgres
+    environment:
+      POSTGRES_DB: isacantoradb
+      POSTGRES_USER: isauser
+      POSTGRES_PASSWORD: isapass
+    ports:
+      - "5433:5432" # porta externa 5433, interna continua 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

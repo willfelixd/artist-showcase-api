@@ -1,0 +1,6 @@
+# Copie esse arquivo para application-dev.properties e preencha os valores
+spring.datasource.url=jdbc:postgresql://localhost:5432/isacantoradb
+spring.datasource.username=SEU_USUARIO
+spring.datasource.password=SUA_SENHA
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
