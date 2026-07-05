@@ -46,4 +46,10 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleIllegalArgument(IllegalArgumentException ex) {
         return Map.of("error", ex.getMessage());
     }
+
+    @ExceptionHandler(BookingConflictException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handleBookingConflict(BookingConflictException ex) {
+        return Map.of("error", ex.getMessage());
+    }
 }
