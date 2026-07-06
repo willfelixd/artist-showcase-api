@@ -52,4 +52,10 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleBookingConflict(BookingConflictException ex) {
         return Map.of("error", ex.getMessage());
     }
+
+    @ExceptionHandler(RateLimitException.class)
+    @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
+    public Map<String, String> handleRateLimit(RateLimitException ex) {
+        return Map.of("error", ex.getMessage());
+    }
 }

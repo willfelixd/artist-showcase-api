@@ -21,6 +21,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// E-mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	// Rate limiting com Bucket4j (biblioteca leve, sem Redis por enquanto)
+	implementation 'com.bucket4j:bucket4j-core:8.10.1'
 	runtimeOnly 'org.postgresql:postgresql'          // substituiu o H2
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
