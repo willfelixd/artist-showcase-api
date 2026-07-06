@@ -73,11 +73,11 @@ e saída da API.
 
 - [x] #1 Setup inicial do projeto
 - [x] #2 Módulo de perfil da artista
-- [ ] #3 Migração para PostgreSQL com Docker
-- [ ] #4 Módulo de repertório musical
-- [ ] #5 Módulo de vídeos com integração YouTube
-- [ ] #6 Módulo de agenda com validação de conflitos
-- [ ] #7 Módulo de contato com e-mail e rate limiting
+- [x] #3 Migração para PostgreSQL com Docker
+- [x] #4 Módulo de repertório musical
+- [x] #5 Módulo de vídeos com integração YouTube
+- [x] #6 Módulo de agenda com validação de conflitos
+- [x] #7 Módulo de contato com e-mail e rate limiting
 - [ ] #8 Autenticação JWT e proteção de rotas admin
 - [ ] #9 Documentação Swagger, testes e logs estruturados
 - [ ] #10 Cache Redis e Docker completo
