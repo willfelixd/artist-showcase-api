@@ -25,6 +25,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	// Rate limiting com Bucket4j (biblioteca leve, sem Redis por enquanto)
 	implementation 'com.bucket4j:bucket4j-core:8.10.1'
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
 	runtimeOnly 'org.postgresql:postgresql'          // substituiu o H2
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
