@@ -15,3 +15,5 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 
 app.mail.to=isacantora@email.com
 app.mail.from=seuemail@gmail.com
+
+app.jwt.secret=GERE_UMA_STRING_ALEATORIA_LONGA_AQUI
