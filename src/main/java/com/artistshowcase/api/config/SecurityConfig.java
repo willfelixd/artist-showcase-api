@@ -38,6 +38,14 @@ public class SecurityConfig {
                 // Regras de acesso por rota
                 .authorizeHttpRequests(auth -> auth
 
+                        // Swagger UI
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs"
+                        ).permitAll()
+
                         // Público: login
                         .requestMatchers("/api/auth/**").permitAll()
 

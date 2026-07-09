@@ -79,7 +79,7 @@ e saída da API.
 - [x] #6 Módulo de agenda com validação de conflitos
 - [x] #7 Módulo de contato com e-mail e rate limiting
 - [x] #8 Autenticação JWT e proteção de rotas admin
-- [ ] #9 Documentação Swagger, testes e logs estruturados
+- [x] #9 Documentação Swagger, testes e logs estruturados
 - [ ] #10 Cache Redis e Docker completo
 - [ ] #11 Pipeline de CD e deploy no Render
 

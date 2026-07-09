@@ -5,6 +5,10 @@ import com.artistshowcase.api.dto.BookingResponseDTO;
 import com.artistshowcase.api.dto.BookingStatusUpdateDTO;
 import com.artistshowcase.api.model.enums.BookingStatus;
 import com.artistshowcase.api.service.BookingService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -15,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
+@Tag(name = "Agenda", description = "Gerenciamento de agendamentos de shows")
 public class BookingController {
 
     private final BookingService bookingService;
@@ -23,27 +28,43 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    // Público: solicitar agendamento
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(
+            summary = "Solicitar agendamento",
+            description = "Cria uma solicitação de show — valida conflitos de horário — endpoint público"
+    )
     public BookingResponseDTO create(@Valid @RequestBody BookingRequestDTO dto) {
         return bookingService.create(dto);
     }
 
-    // Público: datas indisponíveis para o calendário
     @GetMapping("/unavailable-dates")
+    @Operation(
+            summary = "Datas indisponíveis",
+            description = "Retorna lista de datas com shows confirmados — endpoint público"
+    )
     public List<LocalDate> getUnavailableDates() {
         return bookingService.getUnavailableDates();
     }
 
-    // Público: buscar agendamento por ID (para confirmação)
     @GetMapping("/{id}")
-    public BookingResponseDTO findById(@PathVariable Long id) {
+    @Operation(
+            summary = "Buscar agendamento por ID",
+            description = "Retorna um agendamento específico — endpoint público"
+    )
+    public BookingResponseDTO findById(
+            @Parameter(description = "ID do agendamento")
+            @PathVariable Long id
+    ) {
         return bookingService.findById(id);
     }
 
-    // Admin: listar todos
     @GetMapping
+    @Operation(
+            summary = "Listar agendamentos",
+            description = "Retorna lista paginada de todos os agendamentos — requer autenticação de admin"
+    )
+    @SecurityRequirement(name = "Bearer Auth")
     public Page<BookingResponseDTO> findAll(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size
@@ -51,9 +72,14 @@ public class BookingController {
         return bookingService.findAll(page, size);
     }
 
-    // Admin: filtrar por status
     @GetMapping("/status/{status}")
+    @Operation(
+            summary = "Filtrar por status",
+            description = "Retorna agendamentos filtrados por status — requer autenticação de admin"
+    )
+    @SecurityRequirement(name = "Bearer Auth")
     public Page<BookingResponseDTO> findByStatus(
+            @Parameter(description = "Status do agendamento: PENDING, CONFIRMED ou CANCELLED")
             @PathVariable BookingStatus status,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size
@@ -61,19 +87,31 @@ public class BookingController {
         return bookingService.findByStatus(status, page, size);
     }
 
-    // Admin: atualizar status
     @PatchMapping("/{id}/status")
+    @Operation(
+            summary = "Atualizar status",
+            description = "Confirma ou cancela um agendamento — requer autenticação de admin"
+    )
+    @SecurityRequirement(name = "Bearer Auth")
     public BookingResponseDTO updateStatus(
+            @Parameter(description = "ID do agendamento")
             @PathVariable Long id,
             @Valid @RequestBody BookingStatusUpdateDTO dto
     ) {
         return bookingService.updateStatus(id, dto);
     }
 
-    // Admin: deletar
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    @Operation(
+            summary = "Deletar agendamento",
+            description = "Remove um agendamento — requer autenticação de admin"
+    )
+    @SecurityRequirement(name = "Bearer Auth")
+    public void delete(
+            @Parameter(description = "ID do agendamento")
+            @PathVariable Long id
+    ) {
         bookingService.delete(id);
     }
 }
