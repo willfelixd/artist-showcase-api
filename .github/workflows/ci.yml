@@ -52,6 +52,8 @@ jobs:
           APP_JWT_SECRET: chave-de-teste-longa-para-ci-nao-dar-erro-de-tamanho-insuficiente
           APP_MAIL_TO: test@test.com
           APP_MAIL_FROM: test@test.com
+          APP_ADMIN_USERNAME: admin
+          APP_ADMIN_PASSWORD: admin123
 
       - name: Publicar relatório de testes
         uses: actions/upload-artifact@v4
