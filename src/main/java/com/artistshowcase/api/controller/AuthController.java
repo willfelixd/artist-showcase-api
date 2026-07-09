@@ -5,6 +5,8 @@ import com.artistshowcase.api.dto.LoginResponseDTO;
 import com.artistshowcase.api.model.AdminUser;
 import com.artistshowcase.api.repository.AdminUserRepository;
 import com.artistshowcase.api.security.JwtService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Autenticação", description = "Login e geração de token JWT")
 public class AuthController {
 
     private final AdminUserRepository adminUserRepository;
@@ -30,6 +33,10 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+    @Operation(
+            summary = "Login do admin",
+            description = "Autentica o admin e retorna um token JWT válido por 24h"
+    )
     public LoginResponseDTO login(@Valid @RequestBody LoginRequestDTO dto) {
         AdminUser user = adminUserRepository
                 .findByUsername(dto.getUsername())
@@ -42,7 +49,6 @@ public class AuthController {
         }
 
         String token = jwtService.generateToken(user.getUsername());
-
         return new LoginResponseDTO(token, user.getUsername(), 86400000L);
     }
 }
