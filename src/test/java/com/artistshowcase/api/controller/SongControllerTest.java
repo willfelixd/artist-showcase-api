@@ -58,7 +58,7 @@ class SongControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").isArray())
-                .andExpect(jsonPath("$.totalElements").value(2));
+                .andExpect(jsonPath("$.page.totalElements").value(2)); // ← atualizado
     }
 
     @Test
@@ -69,7 +69,7 @@ class SongControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content[0].title").value("Garota de Ipanema"))
-                .andExpect(jsonPath("$.totalElements").value(1));
+                .andExpect(jsonPath("$.page.totalElements").value(1)); // ← atualizado
     }
 
     @Test
@@ -79,7 +79,7 @@ class SongControllerTest {
                         .param("genre", "Samba")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.totalElements").value(1))
+                .andExpect(jsonPath("$.page.totalElements").value(1)) // ← atualizado
                 .andExpect(jsonPath("$.content[0].genre").value("Samba"));
     }
 
@@ -89,7 +89,7 @@ class SongControllerTest {
         mockMvc.perform(get("/api/songs/most-requested")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.totalElements").value(1))
+                .andExpect(jsonPath("$.page.totalElements").value(1)) // ← atualizado
                 .andExpect(jsonPath("$.content[0].mostRequested").value(true));
     }
 
