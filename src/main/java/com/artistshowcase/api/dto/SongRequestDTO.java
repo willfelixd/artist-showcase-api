@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SongRequestDTO {
+public class SongRequestDTO implements Serializable {
 
     @NotBlank(message = "Título é obrigatório")
     private String title;

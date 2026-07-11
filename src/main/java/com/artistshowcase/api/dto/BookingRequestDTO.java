@@ -5,13 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookingRequestDTO {
+public class BookingRequestDTO implements Serializable {
 
     @NotBlank(message = "Nome do solicitante é obrigatório")
     private String requesterName;
