@@ -80,7 +80,7 @@ e saída da API.
 - [x] #7 Módulo de contato com e-mail e rate limiting
 - [x] #8 Autenticação JWT e proteção de rotas admin
 - [x] #9 Documentação Swagger, testes e logs estruturados
-- [ ] #10 Cache Redis e Docker completo
+- [x] #10 Cache Redis e Docker completo
 - [ ] #11 Pipeline de CD e deploy no Render
 
 ---

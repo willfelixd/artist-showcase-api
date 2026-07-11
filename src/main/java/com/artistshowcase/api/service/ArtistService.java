@@ -3,6 +3,8 @@ package com.artistshowcase.api.service;
 import com.artistshowcase.api.dto.ArtistDTO;
 import com.artistshowcase.api.model.Artist;
 import com.artistshowcase.api.repository.ArtistRepository;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -16,6 +18,7 @@ public class ArtistService {
         this.artistRepository = artistRepository;
     }
 
+    @Cacheable(value = "artist", key = "'profile'")
     public ArtistDTO getProfile() {
         // Por enquanto, assumimos que existe sempre um único artista (id = 1)
         Artist artist = artistRepository.findById(1L)
@@ -24,6 +27,7 @@ public class ArtistService {
         return toDTO(artist);
     }
 
+    @CacheEvict(value = "artist", allEntries = true)
     public ArtistDTO updateProfile(ArtistDTO dto) {
         Artist artist = artistRepository.findById(1L)
                 .orElse(new Artist());

@@ -7,6 +7,8 @@ import com.artistshowcase.api.exception.BookingConflictException;
 import com.artistshowcase.api.model.Booking;
 import com.artistshowcase.api.model.enums.BookingStatus;
 import com.artistshowcase.api.repository.BookingRepository;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -65,11 +67,14 @@ public class BookingService {
     }
 
     // Público: datas bloqueadas para o calendário
+    @Cacheable(value = "unavailable-dates", key = "'dates'")
     public List<LocalDate> getUnavailableDates() {
         return bookingRepository.findConfirmedDatesFrom(LocalDate.now());
     }
 
     // Admin: atualizar status
+    // Invalida o cache de datas ao confirmar ou cancelar um agendamento
+    @CacheEvict(value = "unavailable-dates", allEntries = true)
     public BookingResponseDTO updateStatus(Long id, BookingStatusUpdateDTO dto) {
         Booking booking = bookingRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Agendamento não encontrado: " + id));

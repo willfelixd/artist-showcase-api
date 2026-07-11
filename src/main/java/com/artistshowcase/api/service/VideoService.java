@@ -5,6 +5,8 @@ import com.artistshowcase.api.dto.VideoResponseDTO;
 import com.artistshowcase.api.model.Video;
 import com.artistshowcase.api.repository.VideoRepository;
 import com.artistshowcase.api.util.YouTubeUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -20,12 +22,14 @@ public class VideoService {
         this.videoRepository = videoRepository;
     }
 
+    @Cacheable(value = "videos", key = "'all-' + #page + '-' + #size")
     public Page<VideoResponseDTO> findAll(int page, int size) {
         return videoRepository
                 .findAllByOrderByCreatedAtDesc(PageRequest.of(page, size))
                 .map(this::toResponseDTO);
     }
 
+    @Cacheable(value = "videos", key = "'featured-' + #page + '-' + #size")
     public Page<VideoResponseDTO> findFeatured(int page, int size) {
         return videoRepository
                 .findByFeaturedTrueOrderByCreatedAtDesc(PageRequest.of(page, size))
@@ -38,6 +42,7 @@ public class VideoService {
                 .orElseThrow(() -> new NoSuchElementException("Vídeo não encontrado: " + id));
     }
 
+    @CacheEvict(value = "videos", allEntries = true)
     public VideoResponseDTO create(VideoRequestDTO dto) {
         String videoId = YouTubeUtils.extractVideoId(dto.getYoutubeUrl());
 
@@ -51,6 +56,7 @@ public class VideoService {
         return toResponseDTO(videoRepository.save(video));
     }
 
+    @CacheEvict(value = "videos", allEntries = true)
     public VideoResponseDTO update(Long id, VideoRequestDTO dto) {
         Video video = videoRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Vídeo não encontrado: " + id));
@@ -66,6 +72,7 @@ public class VideoService {
         return toResponseDTO(videoRepository.save(video));
     }
 
+    @CacheEvict(value = "videos", allEntries = true)
     public void delete(Long id) {
         if (!videoRepository.existsById(id)) {
             throw new NoSuchElementException("Vídeo não encontrado: " + id);
