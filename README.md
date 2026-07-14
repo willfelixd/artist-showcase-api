@@ -1,14 +1,17 @@
 # 🎤 Artist Showcase API
 
-![CI](https://github.com/willfelixd/artist-showcase-api/actions/workflows/ci.yml/badge.svg) ![Em Desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-yellow) ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.15-green) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+![CI](https://github.com/willfelixd/artist-showcase-api/actions/workflows/ci.yml/badge.svg) ![CD](https://github.com/willfelixd/artist-showcase-api/actions/workflows/cd.yml/badge.svg) ![Concluído](https://img.shields.io/badge/status-concluído-brightgreen) ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.x-green) ![Spring Security](https://img.shields.io/badge/Spring%20Security-JWT-6DB33F?logo=springsecurity&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-API%20Tests-FF6C37?logo=postman&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203-85EA2D?logo=swagger&logoColor=black) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions&logoColor=white) [![Kanban](https://img.shields.io/badge/Project-Kanban-blue?style=flat&logo=github)](https://github.com/users/willfelixd/projects/4) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/) ![Render](https://img.shields.io/badge/Render-Deploy-46E3B7?logo=render&logoColor=white) ![Git](https://img.shields.io/badge/Git-Flow-F05032?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)
 
 > API REST desenvolvida com Java 17 + Spring Boot 3 para gerenciamento do
-> portfólio da cantora Isa Tavares. 
+> portfólio da cantora Isa Tavares.
 > Agenda de shows, repertório, vídeos e contato.
 
 ---
 
-## 📌 Sobre o projeto
+<details>
+<summary>📌 Sobre o projeto</summary>
+
+<br/>
 
 Este projeto consiste em uma API REST completa que serve como backend para
 o portfólio digital da cantora Isa. A aplicação permite que o público
@@ -16,21 +19,29 @@ visualize informações da artista, consulte a agenda de shows, o repertório
 musical e entre em contato — enquanto o admin gerencia tudo via painel
 protegido com autenticação JWT.
 
+### 📋 Kanban
+
+🗂️ **Acompanhe o progresso:** [Kanban - artist-showcase](https://github.com/users/willfelixd/projects/4)
+
 <p>
-  <img src=".github/assets/kanban-artist-showcase.gif" alt="Project Kanban" width="700"/>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/kanban-artist-showcase.gif" alt="Project Kanban" width="700"/>
 </p>
 
-> ⚠️ Projeto em desenvolvimento ativo. Novas funcionalidades serão adicionadas
-> a cada fase.
+> ⚠️ Projeto em desenvolvimento ativo. Novas funcionalidades serão adicionadas a cada fase.
+
+</details>
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+<details>
+<summary>🛠️ Tecnologias utilizadas</summary>
+
+<br/>
 
 | Tecnologia | Uso no projeto |
 |---|---|
 | Java 17 | Linguagem principal |
-| Spring Boot 3.5.15 | Configuração e execução da aplicação |
+| Spring Boot 3.3.x | Configuração e execução da aplicação |
 | Spring Web MVC | Endpoints REST |
 | Spring Data JPA / Hibernate | Persistência e consultas |
 | Spring Security + JWT | Autenticação e autorização |
@@ -44,9 +55,14 @@ protegido com autenticação JWT.
 | GitHub Actions | CI/CD automatizado |
 | Swagger / OpenAPI 3 | Documentação interativa da API |
 
+</details>
+
 ---
 
-## 🧱 Arquitetura do projeto
+<details>
+<summary>🧱 Arquitetura do projeto</summary>
+
+<br/>
 
 O projeto segue uma arquitetura em camadas:
 
@@ -67,25 +83,35 @@ de negócio no service e pela camada de persistência. Endpoints de leitura
 frequente são cacheados no Redis. Os DTOs definem os contratos de entrada
 e saída da API.
 
+</details>
+
 ---
 
-## 📈 Evolução do projeto
+<details>
+<summary>📈 Evolução do projeto</summary>
+
+<br/>
 
 - [x] #1 Setup inicial do projeto
-- [ ] #2 Módulo de perfil da artista
-- [ ] #3 Migração para PostgreSQL com Docker
-- [ ] #4 Módulo de repertório musical
-- [ ] #5 Módulo de vídeos com integração YouTube
-- [ ] #6 Módulo de agenda com validação de conflitos
-- [ ] #7 Módulo de contato com e-mail e rate limiting
-- [ ] #8 Autenticação JWT e proteção de rotas admin
-- [ ] #9 Documentação Swagger, testes e logs estruturados
-- [ ] #10 Cache Redis e Docker completo
-- [ ] #11 Pipeline de CD e deploy no Render
+- [x] #2 Módulo de perfil da artista
+- [x] #3 Migração para PostgreSQL com Docker
+- [x] #4 Módulo de repertório musical
+- [x] #5 Módulo de vídeos com integração YouTube
+- [x] #6 Módulo de agenda com validação de conflitos
+- [x] #7 Módulo de contato com e-mail e rate limiting
+- [x] #8 Autenticação JWT e proteção de rotas admin
+- [x] #9 Documentação Swagger, testes e logs estruturados
+- [x] #10 Cache Redis e Docker completo
+- [x] #11 Pipeline de CD e deploy no Render
+
+</details>
 
 ---
 
-## ⚙️ Funcionalidades
+<details>
+<summary>⚙️ Funcionalidades</summary>
+
+<br/>
 
 ### Públicas
 - ✅ Visualizar perfil da artista
@@ -102,9 +128,14 @@ e saída da API.
 - ✅ Gerenciar agendamentos (confirmar / cancelar)
 - ✅ Visualizar mensagens de contato recebidas
 
+</details>
+
 ---
 
-## ▶️ Como executar o projeto
+<details>
+<summary>▶️ Como executar o projeto</summary>
+
+<br/>
 
 ### Pré-requisitos
 
@@ -140,15 +171,22 @@ docker compose up postgres redis -d
 
 ### 5. Rodar a aplicação
 
-No Linux ou macOS:
+- Opção A — rodar via IntelliJ/Gradle (desenvolvimento normal)
 ```bash
-./gradlew bootRun
+docker compose up postgres redis -d   # só banco e Redis
+./gradlew bootRun                     # backend pelo Gradle
 ```
 
-No Windows:
+- Opção B — rodar tudo containerizado
 ```bash
-gradlew.bat bootRun
+docker compose up --build             # tudo via Docker, NÃO roda ./gradlew bootRun junto
+
+# Sempre escolha um dos dois para rodar, nunca os dois ao mesmo tempo
 ```
+
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/docker-build.gif" alt="Gif do Docker build" width="700"/>
+</p>
 
 A aplicação sobe em `http://localhost:8080`
 
@@ -156,13 +194,111 @@ O admin padrão é criado automaticamente no primeiro boot:
 - **Usuário:** `admin`
 - **Senha:** definida em `application-dev.properties`
 
+### 6. Documentação da API
+
+Após subir a aplicação, acesse: `http://localhost:8080/swagger-ui/index.html`
+
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/swagger-ui.gif" alt="Gif do Swagger Ui" width="700"/>
+</p>
+
+</details>
+
 ---
 
-## 🔌 Endpoints da API
+<details>
+<summary>🔐 Segurança</summary>
+
+<br/>
+
+Gere um `JWT_SECRET` seguro com:
+```bash
+openssl rand -base64 64
+```
+
+Gere um `ADMIN_PASSWORD` seguro com:
+```bash
+openssl rand -base64 16
+```
+
+**MAIL_PASSWORD:**
+App password do Gmail em — [Gerenciar sua Conta do Google](https://myaccount.google.com) → Segurança → Senhas de app
+
+> ⚠️ Nunca commite credenciais reais. Os arquivos `application-dev.properties` e `.env` estão no `.gitignore`.
+
+</details>
+
+---
+
+<details>
+<summary>🔀 Fluxo de desenvolvimento</summary>
+
+<br/>
+
+Este projeto segue o GitHub Flow adaptado com branch de desenvolvimento:
+
+```
+main (protegida — só via PR de release)
+└── develop (branch principal de trabalho)
+    └── feature/nome-da-feature
+         ↓ commit
+         ↓ push
+         ↓ PR → develop
+         ↓ CI passa
+         ↓ merge
+         ↓ git checkout develop
+         ↓ git pull origin develop       ← atualiza o local
+         ↓ git branch -d feature/nome    ← deleta a branch local
+```
+
+### Padrão de branches
+
+| Branch | Descrição |
+|---|---|
+| `main` | Produção — protegida, só recebe PR de release |
+| `develop` | Desenvolvimento — base para todas as features |
+| `feature/*` | Nova funcionalidade — ex: `feature/artist-profile` |
+| `hotfix/*` | Correção urgente em produção |
+
+### Padrão de commits
+
+[Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+feat: add artist profile module
+fix: correct booking conflict validation
+chore: update CI pipeline
+docs: update README with Kanban GIF
+```
+
+### Ciclo completo de uma feature
+
+1. Criar Issue no GitHub
+2. `git checkout develop`
+3. `git checkout -b feature/nome-da-feature`
+4. Desenvolver e commitar
+5. `git push origin feature/nome-da-feature`
+6. Abrir PR → develop com template
+7. CI passa
+8. Merge → develop
+9. Deletar branch da feature
+
+### Release para produção
+
+```
+develop → PR → main → CI/CD → deploy automático no Render
+```
+
+</details>
+
+---
+
+<details>
+<summary>🔌 Endpoints da API</summary>
+
+<br/>
 
 A documentação completa e interativa está disponível em `http://localhost:8080/swagger-ui/index.html`
-
-Resumo dos principais endpoints:
 
 ### Autenticação — `/api/auth`
 
@@ -219,9 +355,14 @@ Resumo dos principais endpoints:
 | `GET` | `/api/contact/failed` | Admin | Mensagens com falha no e-mail |
 | `GET` | `/api/contact/{id}` | Admin | Detalhe da mensagem |
 
+</details>
+
 ---
 
-## 🧪 Testes
+<details>
+<summary>🧪 Testes</summary>
+
+<br/>
 
 ```bash
 ./gradlew test
@@ -239,9 +380,14 @@ start build/reports/tests/test/index.html
 
 Os testes usam H2 em memória — não precisam do Docker rodando.
 
+</details>
+
 ---
 
-## 📁 Estrutura de pastas
+<details>
+<summary>📁 Estrutura de pastas</summary>
+
+<br/>
 
 ```
 src
@@ -272,19 +418,48 @@ src
         └── application-test.properties
 ```
 
+</details>
+
 ---
 
-## 📸 Demonstração
+<details>
+<summary>📸 Demonstração</summary>
 
-*(Em breve — prints do Swagger e do painel admin)*
+<br/>
 
+Swagger:
 <p>
-  <img src=".github/assets/primeiro-teste.png" alt="Primeiro teste do backend — GET /api/health" width="700"/>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/swagger.png" alt="Swagger" width="700"/>
 </p>
 
+Painel Admin:
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/painel-admin.png" alt="Painel Admin" width="700"/>
+</p>
+
+PostgreSQL com Docker:
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/postgresql-docker.png" alt="PostgreSQL com Docker" width="700"/>
+</p>
+
+Docker final:
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/docker-final.png" alt="Docker final" width="700"/>
+</p>
+
+Postman final:
+<p>
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/postman-final.png" alt="Postman final" width="700"/>
+</p>
+
+</details>
+
 ---
 
-## 📚 Aprendizados
+<details>
+<summary>📚 Aprendizados</summary>
+
+<br/>
 
 - Desenvolvimento de APIs REST com Spring Boot 3
 - Arquitetura em camadas com separação de responsabilidades
@@ -295,12 +470,13 @@ src
 - Containerização com Docker e orquestração com docker-compose
 - CI/CD com GitHub Actions e deploy automático no Render
 
+</details>
+
 ---
 
 ## 🔗 Repositórios relacionados
 
 * **Frontend:** [artist-showcase-ui](https://github.com/willfelixd/artist-showcase-ui)
-*(em desenvolvimento)*
 
 ---
 
@@ -316,11 +492,15 @@ src
   <tr>
     <td align="center">
       <a href="https://github.com/willfelixd">
-        <img src="https://avatars.githubusercontent.com/willfelixd?v=4" width="100px;" /><br />
-        <a href="https://www.linkedin.com/in/william-felix-souza">William Felix</a>
+        <img src="https://avatars.githubusercontent.com/willfelixd?v=4" width="120px;" />
+      </a><br/>
+      <b>William Felix</b><br/>
+      <a href="https://www.linkedin.com/in/william-felix-souza/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+      </a>
+      <a href="mailto:willfelixd@gmail.com?subject=Proposta%20de%20Projeto&body=Olá,%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto.">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white" alt="Gmail"/>
       </a>
     </td>
   </tr>
 </table>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/william-felix-souza/) [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:willfelixd@gmail.com?subject=Proposta%20de%20Projeto&body=Olá,%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto.)

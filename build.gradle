@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.15'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.springframework.boot' version '3.3.0'
+	id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.artistshowcase'
@@ -19,13 +19,33 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// E-mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	// Rate limiting com Bucket4j (biblioteca leve, sem Redis por enquanto)
+	implementation 'com.bucket4j:bucket4j-core:8.10.1'
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+	// Swagger / OpenAPI
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+	// Logs estruturados em JSON
+	implementation 'net.logstash.logback:logstash-logback-encoder:7.4'
+	// Redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
+	runtimeOnly 'org.postgresql:postgresql'          // substituiu o H2
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testCompileOnly 'org.projectlombok:lombok'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'com.h2database:h2'
 }
 
 tasks.named('test') {
