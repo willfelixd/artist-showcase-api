@@ -10,9 +10,12 @@
 
 ### 🌐 Produção
 
-API disponível em: https://artist-showcase-api.onrender.com
+> Backend em produção no Render — infrastructure as code com deploy automático via GitHub Actions.
 
-Documentação Swagger: https://artist-showcase-api.onrender.com/swagger-ui/index.html
+| | Link |
+|---|---|
+| 🚀 **API** | [artist-showcase-api.onrender.com](https://artist-showcase-api.onrender.com/api/health) |
+| 📄 **Swagger** | [Documentação interativa](https://artist-showcase-api.onrender.com/swagger-ui/index.html) |
 
 ---
 
@@ -24,7 +27,7 @@ visualize informações da artista, consulte a agenda de shows, o repertório
 musical e entre em contato — enquanto o admin gerencia tudo via painel
 protegido com autenticação JWT.
 
-### 📋 Kanban
+#### 📋 Kanban
 
 🗂️ **Acompanhe o progresso:** [Kanban - artist-showcase](https://github.com/users/willfelixd/projects/4)
 
