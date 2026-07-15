@@ -71,7 +71,7 @@ jobs:
           sleep 10
           
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://seu-app.onrender.com/api/health")
+            "https://artist-showcase-api.onrender.com/api/health")
           
           if [ "$RESPONSE" -eq 200 ]; then
             echo "✅ Aplicação está respondendo (HTTP $RESPONSE)"

@@ -8,10 +8,15 @@
 
 ---
 
-<details>
-<summary>📌 Sobre o projeto</summary>
+### 🌐 Produção
 
-<br/>
+API disponível em: https://artist-showcase-api.onrender.com
+
+Documentação Swagger: https://artist-showcase-api.onrender.com/swagger-ui/index.html
+
+---
+
+### 📌 Sobre o projeto
 
 Este projeto consiste em uma API REST completa que serve como backend para
 o portfólio digital da cantora Isa. A aplicação permite que o público
@@ -29,12 +34,30 @@ protegido com autenticação JWT.
 
 > ⚠️ Projeto em desenvolvimento ativo. Novas funcionalidades serão adicionadas a cada fase.
 
-</details>
+---
+
+### ⚙️ Funcionalidades
+
+### Públicas
+- ✅ Visualizar perfil da artista
+- ✅ Listar e buscar músicas do repertório (filtro por gênero e título)
+- ✅ Listar vídeos do YouTube com thumbnail e embed gerados automaticamente
+- ✅ Consultar datas indisponíveis na agenda
+- ✅ Solicitar agendamento de show com validação de conflito de horário
+- ✅ Enviar mensagem de contato (rate limiting — 3 mensagens/hora por IP)
+
+### Admin (requer autenticação JWT)
+- ✅ Gerenciar perfil da artista
+- ✅ CRUD completo de músicas
+- ✅ CRUD completo de vídeos
+- ✅ Gerenciar agendamentos (confirmar / cancelar)
+- ✅ Visualizar mensagens de contato recebidas
 
 ---
 
+### 🛠️ Tecnologias utilizadas
 <details>
-<summary>🛠️ Tecnologias utilizadas</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -59,8 +82,9 @@ protegido com autenticação JWT.
 
 ---
 
+### 🧱 Arquitetura do projeto
 <details>
-<summary>🧱 Arquitetura do projeto</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -87,8 +111,9 @@ e saída da API.
 
 ---
 
+### 📈 Evolução do projeto
 <details>
-<summary>📈 Evolução do projeto</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -108,32 +133,9 @@ e saída da API.
 
 ---
 
+### ▶️ Como executar o projeto
 <details>
-<summary>⚙️ Funcionalidades</summary>
-
-<br/>
-
-### Públicas
-- ✅ Visualizar perfil da artista
-- ✅ Listar e buscar músicas do repertório (filtro por gênero e título)
-- ✅ Listar vídeos do YouTube com thumbnail e embed gerados automaticamente
-- ✅ Consultar datas indisponíveis na agenda
-- ✅ Solicitar agendamento de show com validação de conflito de horário
-- ✅ Enviar mensagem de contato (rate limiting — 3 mensagens/hora por IP)
-
-### Admin (requer autenticação JWT)
-- ✅ Gerenciar perfil da artista
-- ✅ CRUD completo de músicas
-- ✅ CRUD completo de vídeos
-- ✅ Gerenciar agendamentos (confirmar / cancelar)
-- ✅ Visualizar mensagens de contato recebidas
-
-</details>
-
----
-
-<details>
-<summary>▶️ Como executar o projeto</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -206,8 +208,9 @@ Após subir a aplicação, acesse: `http://localhost:8080/swagger-ui/index.html`
 
 ---
 
+### 🔐 Segurança
 <details>
-<summary>🔐 Segurança</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -230,8 +233,9 @@ App password do Gmail em — [Gerenciar sua Conta do Google](https://myaccount.g
 
 ---
 
+### 🔀 Fluxo de desenvolvimento
 <details>
-<summary>🔀 Fluxo de desenvolvimento</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -293,8 +297,9 @@ develop → PR → main → CI/CD → deploy automático no Render
 
 ---
 
+### 🔌 Endpoints da API
 <details>
-<summary>🔌 Endpoints da API</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -359,8 +364,9 @@ A documentação completa e interativa está disponível em `http://localhost:80
 
 ---
 
+### 🧪 Testes
 <details>
-<summary>🧪 Testes</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -384,8 +390,9 @@ Os testes usam H2 em memória — não precisam do Docker rodando.
 
 ---
 
+### 📁 Estrutura de pastas
 <details>
-<summary>📁 Estrutura de pastas</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -422,8 +429,9 @@ src
 
 ---
 
+### 📸 Demonstração
 <details>
-<summary>📸 Demonstração</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -456,8 +464,9 @@ Postman final:
 
 ---
 
+### 📚 Aprendizados
 <details>
-<summary>📚 Aprendizados</summary>
+<summary><i>Clique aqui para ver o conteúdo</i></summary>
 
 <br/>
 
@@ -474,19 +483,19 @@ Postman final:
 
 ---
 
-## 🔗 Repositórios relacionados
+### 🔗 Repositórios relacionados
 
 * **Frontend:** [artist-showcase-ui](https://github.com/willfelixd/artist-showcase-ui)
 
 ---
 
-## 📄 Licença
+### 📄 Licença
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/willfelixd/artist-showcase-api?tab=MIT-1-ov-file)
 
 ---
 
-## ✍️ Autor
+### ✍️ Autor
 
 <table>
   <tr>
