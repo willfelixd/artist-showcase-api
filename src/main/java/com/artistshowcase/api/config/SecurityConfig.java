@@ -46,6 +46,8 @@ public class SecurityConfig {
                                 "/v3/api-docs"
                         ).permitAll()
 
+                        .requestMatchers("/api/health").permitAll()
+
                         // Público: login
                         .requestMatchers("/api/auth/**").permitAll()
 
