@@ -1,9 +1,19 @@
-# 🎤 Artist Showcase API
+<p align="center">
+  <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/logo-artist-showcase.svg" alt="Logo Artist Showcase" width="120"/>
+</p>
+
+<h1 align="center">🎤 Artist Showcase</h1>
+<p align="center"><sub>⚙️ API</sub></p>
+
+<p align="center">
+  API REST para gerenciamento do portfólio digital da cantora <strong>Isa Tavares</strong> —
+  agenda de shows, repertório, vídeos e contato.
+</p>
 
 ![CI](https://github.com/willfelixd/artist-showcase-api/actions/workflows/ci.yml/badge.svg) ![CD](https://github.com/willfelixd/artist-showcase-api/actions/workflows/cd.yml/badge.svg) ![Concluído](https://img.shields.io/badge/status-concluído-brightgreen) ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.x-green) ![Spring Security](https://img.shields.io/badge/Spring%20Security-JWT-6DB33F?logo=springsecurity&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-API%20Tests-FF6C37?logo=postman&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203-85EA2D?logo=swagger&logoColor=black) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions&logoColor=white) [![Kanban](https://img.shields.io/badge/Project-Kanban-blue?style=flat&logo=github)](https://github.com/users/willfelixd/projects/4) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/) ![Render](https://img.shields.io/badge/Render-Deploy-46E3B7?logo=render&logoColor=white) ![Git](https://img.shields.io/badge/Git-Flow-F05032?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)
 
-> API REST desenvolvida com Java 17 + Spring Boot 3 para gerenciamento do
-> portfólio da cantora Isa Tavares.
+> API REST desenvolvida com Java 17 + Spring Boot 3
+> para gerenciamento do portfólio da artista.
 > Agenda de shows, repertório, vídeos e contato.
 
 ---
@@ -21,9 +31,9 @@
 
 ### 📌 Sobre o projeto
 
-Este projeto consiste em uma API REST completa que serve como backend para
-o portfólio digital da cantora Isa. A aplicação permite que o público
-visualize informações da artista, consulte a agenda de shows, o repertório
+Este projeto consiste em uma API REST completa que serve como backend
+para o portfólio digital da artista. A aplicação permite que o público
+visualize informações da cantora, consulte a agenda de shows, o repertório
 musical e entre em contato — enquanto o admin gerencia tudo via painel
 protegido com autenticação JWT.
 
@@ -35,7 +45,7 @@ protegido com autenticação JWT.
   <img src="https://raw.githubusercontent.com/willfelixd/artist-showcase-api/main/.github/assets/kanban-artist-showcase.gif" alt="Project Kanban" width="700"/>
 </p>
 
-> ⚠️ Projeto em desenvolvimento ativo. Novas funcionalidades serão adicionadas a cada fase.
+> ✅ Backend — concluído e em produção no Render.
 
 ---
 
