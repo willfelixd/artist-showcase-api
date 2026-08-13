@@ -4,25 +4,25 @@
 
   <defs>
     <style>
-      .logo-circle { fill: transparent; stroke: #B5654A; stroke-width: 1.5; }
-      .logo-note { fill: #B5654A; }
-      .logo-stem { stroke: #B5654A; stroke-width: 3; stroke-linecap: round; fill: none; }
-      .logo-flag { stroke: #B5654A; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+      .logo-circle { fill: transparent; stroke: #FF4D8D; stroke-width: 1.5; }
+      .logo-note { fill: #FF4D8D; }
+      .logo-stem { stroke: #FF4D8D; stroke-width: 3; stroke-linecap: round; fill: none; }
+      .logo-flag { stroke: #FF4D8D; stroke-width: 2.5; fill: none; stroke-linecap: round; }
       .logo-name {
         font-family: Georgia, serif;
         font-size: 15px;
         font-weight: 600;
-        fill: #B5654A;
+        fill: #FF4D8D;
         letter-spacing: 0.3px;
       }
       .logo-sub {
         font-family: system-ui, sans-serif;
         font-size: 11px;
-        fill: #B5654A;
+        fill: #FF4D8D;
         opacity: 0.85;
         font-weight: 500;
       }
-      .logo-line { stroke: #B5654A; stroke-width: 0.8; opacity: 0.4; }
+      .logo-line { stroke: #FF4D8D; stroke-width: 0.8; opacity: 0.4; }
     </style>
   </defs>
 

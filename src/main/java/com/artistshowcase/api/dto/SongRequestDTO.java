@@ -23,5 +23,7 @@ public class SongRequestDTO implements Serializable {
 
     private String youtubeUrl;
 
+    private String lyrics;
+
     private boolean mostRequested;
 }
