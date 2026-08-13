@@ -33,8 +33,14 @@ class SongServiceTest {
 
     @BeforeEach
     void setUp() {
-        song = new Song(1L, "Garota de Ipanema", "Tom Jobim", "Bossa Nova", null, true);
-        requestDTO = new SongRequestDTO("Garota de Ipanema", "Tom Jobim", "Bossa Nova", null, true);
+        song = new Song(1L, "Garota de Ipanema", "Tom Jobim", "Bossa Nova",
+                null, null, true);
+        //                              ↑
+        //                   novo campo lyrics = null
+        requestDTO = new SongRequestDTO("Garota de Ipanema", "Tom Jobim", "Bossa Nova",
+                null, null, true);
+        //                              ↑
+        //                   novo campo lyrics = null
     }
 
     @Test
