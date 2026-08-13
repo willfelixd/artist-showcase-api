@@ -27,6 +27,9 @@ public class Song {
 
     private String youtubeUrl;
 
+    @Column(columnDefinition = "TEXT")
+    private String lyrics;
+
     @Column(nullable = false)
     private boolean mostRequested = false;
 }

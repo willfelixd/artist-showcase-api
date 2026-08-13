@@ -15,5 +15,6 @@ public class SongResponseDTO implements Serializable {
     private String artist;
     private String genre;
     private String youtubeUrl;
+    private String lyrics;
     private boolean mostRequested;
 }

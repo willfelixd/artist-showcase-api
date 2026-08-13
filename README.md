@@ -54,6 +54,7 @@ protegido com autenticação JWT.
 ### Públicas
 - ✅ Visualizar perfil da artista
 - ✅ Listar e buscar músicas do repertório (filtro por gênero e título)
+- ✅ Consultar a letra de uma música pelo ID
 - ✅ Listar vídeos do YouTube com thumbnail e embed gerados automaticamente
 - ✅ Consultar datas indisponíveis na agenda
 - ✅ Solicitar agendamento de show com validação de conflito de horário
@@ -61,7 +62,7 @@ protegido com autenticação JWT.
 
 ### Admin (requer autenticação JWT)
 - ✅ Gerenciar perfil da artista
-- ✅ CRUD completo de músicas
+- ✅ CRUD completo de músicas, incluindo letras
 - ✅ CRUD completo de vídeos
 - ✅ Gerenciar agendamentos (confirmar / cancelar)
 - ✅ Visualizar mensagens de contato recebidas
@@ -120,6 +121,11 @@ de negócio no service e pela camada de persistência. Endpoints de leitura
 frequente são cacheados no Redis. Os DTOs definem os contratos de entrada
 e saída da API.
 
+As músicas são persistidas no PostgreSQL e podem armazenar suas respectivas
+letras. A consulta individual por ID retorna os dados completos da música,
+permitindo que o frontend apresente a letra em um modal sem carregar esse
+conteúdo em todas as listagens.
+
 </details>
 
 ---
@@ -141,6 +147,7 @@ e saída da API.
 - [x] #9 Documentação Swagger, testes e logs estruturados
 - [x] #10 Cache Redis e Docker completo
 - [x] #11 Pipeline de CD e deploy no Render
+- [x] #12 Suporte a letras no repertório musical
 
 </details>
 
@@ -337,9 +344,9 @@ A documentação completa e interativa está disponível em `http://localhost:80
 |---|---|---|---|
 | `GET` | `/api/songs` | Público | Lista músicas com filtros |
 | `GET` | `/api/songs/most-requested` | Público | Músicas mais pedidas |
-| `GET` | `/api/songs/{id}` | Público | Busca música por ID |
-| `POST` | `/api/songs` | Admin | Cria música |
-| `PUT` | `/api/songs/{id}` | Admin | Atualiza música |
+| `GET` | `/api/songs/{id}` | Público | Busca música por ID, incluindo a letra |
+| `POST` | `/api/songs` | Admin | Cria música, incluindo letra opcional |
+| `PUT` | `/api/songs/{id}` | Admin | Atualiza música, incluindo letra opcional |
 | `DELETE` | `/api/songs/{id}` | Admin | Remove música |
 
 ### Vídeos — `/api/videos`
