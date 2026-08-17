@@ -54,7 +54,8 @@ protegido com autenticação JWT.
 ### Públicas
 - ✅ Visualizar perfil da artista
 - ✅ Listar e buscar músicas do repertório (filtro por gênero e título)
-- ✅ Consultar a letra de uma música pelo ID
+- ✅ Ouvir prévia de músicas via player de áudio (MP3 via Cloudinary)
+- ✅ Visualizar letras das músicas
 - ✅ Listar vídeos do YouTube com thumbnail e embed gerados automaticamente
 - ✅ Consultar datas indisponíveis na agenda
 - ✅ Solicitar agendamento de show com validação de conflito de horário
@@ -62,7 +63,7 @@ protegido com autenticação JWT.
 
 ### Admin (requer autenticação JWT)
 - ✅ Gerenciar perfil da artista
-- ✅ CRUD completo de músicas, incluindo letras
+- ✅ CRUD completo de músicas (com URL de áudio e letra)
 - ✅ CRUD completo de vídeos
 - ✅ Gerenciar agendamentos (confirmar / cancelar)
 - ✅ Visualizar mensagens de contato recebidas
@@ -78,7 +79,7 @@ protegido com autenticação JWT.
 | Tecnologia | Uso no projeto |
 |---|---|
 | Java 17 | Linguagem principal |
-| Spring Boot 3.3.x | Configuração e execução da aplicação |
+| Spring Boot 3.x | Configuração e execução da aplicação |
 | Spring Web MVC | Endpoints REST |
 | Spring Data JPA / Hibernate | Persistência e consultas |
 | Spring Security + JWT | Autenticação e autorização |
@@ -91,6 +92,7 @@ protegido com autenticação JWT.
 | Docker + docker-compose | Containerização dos serviços |
 | GitHub Actions | CI/CD automatizado |
 | Swagger / OpenAPI 3 | Documentação interativa da API |
+| Cloudinary | Storage de arquivos de áudio MP3 |
 
 </details>
 
@@ -147,7 +149,8 @@ conteúdo em todas as listagens.
 - [x] #9 Documentação Swagger, testes e logs estruturados
 - [x] #10 Cache Redis e Docker completo
 - [x] #11 Pipeline de CD e deploy no Render
-- [x] #12 Suporte a letras no repertório musical
+- [x] #12 Campo lyrics para letras de músicas
+- [x] #13 Campo audioUrl para player de áudio via Cloudinary
 
 </details>
 
@@ -344,9 +347,9 @@ A documentação completa e interativa está disponível em `http://localhost:80
 |---|---|---|---|
 | `GET` | `/api/songs` | Público | Lista músicas com filtros |
 | `GET` | `/api/songs/most-requested` | Público | Músicas mais pedidas |
-| `GET` | `/api/songs/{id}` | Público | Busca música por ID, incluindo a letra |
-| `POST` | `/api/songs` | Admin | Cria música, incluindo letra opcional |
-| `PUT` | `/api/songs/{id}` | Admin | Atualiza música, incluindo letra opcional |
+| `GET` | `/api/songs/{id}` | Público | Busca música por ID |
+| `POST` | `/api/songs` | Admin | Cria música (suporta audioUrl e lyrics) |
+| `PUT` | `/api/songs/{id}` | Admin | Atualiza música (suporta audioUrl e lyrics) |
 | `DELETE` | `/api/songs/{id}` | Admin | Remove música |
 
 ### Vídeos — `/api/videos`
@@ -498,6 +501,8 @@ Postman final:
 - Testes unitários com Mockito e de integração com MockMvc
 - Containerização com Docker e orquestração com docker-compose
 - CI/CD com GitHub Actions e deploy automático no Render
+- Integração com serviços externos de storage (Cloudinary) para áudio
+- Boas práticas de armazenamento — arquivos em storage, URLs no banco
 
 </details>
 

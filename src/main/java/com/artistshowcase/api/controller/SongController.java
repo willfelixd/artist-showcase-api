@@ -68,6 +68,7 @@ public class SongController {
         return songService.findById(id);
     }
 
+    @Parameter
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(

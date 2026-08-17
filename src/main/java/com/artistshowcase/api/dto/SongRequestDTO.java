@@ -1,5 +1,6 @@
 package com.artistshowcase.api.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,9 @@ public class SongRequestDTO implements Serializable {
     private String youtubeUrl;
 
     private String lyrics;
+
+    @Schema(description = "URL do arquivo MP3 hospedado no Cloudinary (opcional)")
+    private String audioUrl;
 
     private boolean mostRequested;
 }
