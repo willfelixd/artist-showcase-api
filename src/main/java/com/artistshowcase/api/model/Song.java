@@ -28,7 +28,9 @@ public class Song {
     private String youtubeUrl;
 
     @Column(columnDefinition = "TEXT")
-    private String lyrics;
+    private String lyrics; // ← novo campo — Adição de letras das músicas
+
+    private String audioUrl; // ← novo campo — URL do MP3 no Cloudinary
 
     @Column(nullable = false)
     private boolean mostRequested = false;
