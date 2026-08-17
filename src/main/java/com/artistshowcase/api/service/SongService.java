@@ -61,6 +61,7 @@ public class SongService {
         song.setGenre(dto.getGenre());
         song.setYoutubeUrl(dto.getYoutubeUrl());
         song.setLyrics(dto.getLyrics());
+        song.setAudioUrl(dto.getAudioUrl());
         song.setMostRequested(dto.isMostRequested());
         return toResponseDTO(songRepository.save(song));
     }
@@ -83,6 +84,7 @@ public class SongService {
                 song.getGenre(),
                 song.getYoutubeUrl(),
                 song.getLyrics(),
+                song.getAudioUrl(),
                 song.isMostRequested()
         );
     }
@@ -94,6 +96,7 @@ public class SongService {
         song.setGenre(dto.getGenre());
         song.setYoutubeUrl(dto.getYoutubeUrl());
         song.setLyrics(dto.getLyrics());
+        song.setAudioUrl(dto.getAudioUrl());
         song.setMostRequested(dto.isMostRequested());
         return song;
     }
