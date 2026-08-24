@@ -1,5 +1,6 @@
 package com.artistshowcase.api.config;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,15 +16,31 @@ public class CorsConfig {
     @Value("${app.cors.allowed-origins:http://localhost:5173}")
     private String allowedOrigins;
 
+    @PostConstruct
+    public void logCorsConfiguration() {
+        System.out.println(
+                ">>> CORS ALLOWED ORIGINS: [" + allowedOrigins + "]"
+        );
+    }
+
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of(allowedOrigins.split(",")));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+
+        config.setAllowedOrigins(
+                List.of(allowedOrigins.split(","))
+        );
+
+        config.setAllowedMethods(
+                List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+        );
+
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        UrlBasedCorsConfigurationSource source =
+                new UrlBasedCorsConfigurationSource();
+
         source.registerCorsConfiguration("/api/**", config);
 
         return new CorsFilter(source);
