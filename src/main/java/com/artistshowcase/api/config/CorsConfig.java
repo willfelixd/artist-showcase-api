@@ -19,7 +19,15 @@ public class CorsConfig {
     @PostConstruct
     public void logCorsConfiguration() {
         System.out.println(
-                ">>> CORS ALLOWED ORIGINS: [" + allowedOrigins + "]"
+                ">>> ENV CORS_ALLOWED_ORIGINS: [" +
+                        System.getenv("CORS_ALLOWED_ORIGINS") +
+                        "]"
+        );
+
+        System.out.println(
+                ">>> PROPERTY CORS ALLOWED ORIGINS: [" +
+                        allowedOrigins +
+                        "]"
         );
     }
 
