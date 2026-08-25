@@ -1,8 +1,6 @@
 package com.artistshowcase.api.config;
 
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -14,42 +12,8 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-    @Value("${app.cors.allowed-origins:http://localhost:5173}")
+    @Value("${CORS_ALLOWED_ORIGINS:http://localhost:5173}")
     private String allowedOrigins;
-
-    private final Environment environment;
-
-    public CorsConfig(Environment environment) {
-        this.environment = environment;
-    }
-
-    @PostConstruct
-    public void logCorsConfiguration() {
-
-        System.out.println(
-                ">>> ENV CORS_ALLOWED_ORIGINS: [" +
-                        System.getenv("CORS_ALLOWED_ORIGINS") +
-                        "]"
-        );
-
-        System.out.println(
-                ">>> ENV APP_CORS_ALLOWED_ORIGINS: [" +
-                        System.getenv("APP_CORS_ALLOWED_ORIGINS") +
-                        "]"
-        );
-
-        System.out.println(
-                ">>> PROPERTY app.cors.allowed-origins: [" +
-                        environment.getProperty("app.cors.allowed-origins") +
-                        "]"
-        );
-
-        System.out.println(
-                ">>> @VALUE allowedOrigins: [" +
-                        allowedOrigins +
-                        "]"
-        );
-    }
 
     @Bean
     public CorsFilter corsFilter() {
