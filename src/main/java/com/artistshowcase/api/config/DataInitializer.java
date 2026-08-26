@@ -16,10 +16,10 @@ public class DataInitializer implements ApplicationRunner {
     private final AdminUserRepository adminUserRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Value("${app.admin.username:admin}")
+    @Value("${app.admin.username}")
     private String adminUsername;
 
-    @Value("${app.admin.password:admin123}")
+    @Value("${app.admin.password}")
     private String adminPassword;
 
     public DataInitializer(
